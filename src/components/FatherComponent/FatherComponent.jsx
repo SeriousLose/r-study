@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import ChildComponent from '../ChildComponent/ChildComponent';
 
 export class FatherComponent extends Component {
+
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
+
+
   // 初始化父组件的 state
   state = {
     text: '初始化的父组件的文本',
