@@ -1,14 +1,18 @@
 import './App.css';
+import FatherComponent from './components/FatherComponent/FatherComponent';
+import TestComponent from './components/TestComponent/TestComponent';
+import WelcomeComponent from './components/WelcomeComponent/WelcomeComponent';
 import logo from './logo.svg';
 
-function App() {
+
+function App () {
   return (
     <div className="App">
       <header className="App-header">
+        <FatherComponent />
+        <TestComponent />
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <WelcomeComponent name="React" />
       </header>
     </div>
   );
