@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getArticle } from '../../core/services/httpService';
+import DiscussList from '../DiscussList/DiscussList';
 
 export class Article extends Component {
   constructor(props) {
@@ -12,8 +13,14 @@ export class Article extends Component {
       this.setState({ title: obj.title });
     });
   }
+
   render() {
-    return <div>{this.state.title}</div>;
+    return (
+      <div>
+        <div>{this.state.title}</div>
+        <DiscussList targetId={this.state.targetId} />
+      </div>
+    );
   }
 }
 

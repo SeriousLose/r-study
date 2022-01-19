@@ -27,8 +27,11 @@ export default function request (options = {}) {
       data
     })
   }
+  // let accessToken = '70837f24e79ee5a4bb54a59e5d6ae2a1_csz_web'
+
   options.headers = {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    // 'authorization': accessToken
   }
   console.log(commonUrl + url)
   return fetch(commonUrl + url, options, { credentials: 'include' })
