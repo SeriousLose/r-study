@@ -1,7 +1,8 @@
 
 import { API_TREE } from '../http/api-tree';
 import request from '../http/fetch';
-let accessToken = '70837f24e79ee5a4bb54a59e5d6ae2a1_csz_web'
+
+let accessToken = '24100939b1bd176a72081b10ead8e774_csz_web'
 
 /**
  * @description: 获取文章
@@ -11,6 +12,19 @@ let accessToken = '70837f24e79ee5a4bb54a59e5d6ae2a1_csz_web'
 export function getArticle (id) {
   return request({
     url: API_TREE.thanos.api.cms.article.info + `?targetId=${id}&accessToken=${accessToken}`,
+    method: 'get'
+  })
+}
+
+
+/**
+ * @description: 获取文章
+ * @param {*}
+ * @return {*}
+ */
+export function getArticleList () {
+  return request({
+    url: API_TREE.shopguide.api.article.getArticlesByColumnId + `?page=1&rows=5&accessToken=${accessToken}`,
     method: 'get'
   })
 }

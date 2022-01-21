@@ -8,6 +8,13 @@ const API_TREE_CONFIG = {
         }
       }
     }
+  },
+  shopguide:{
+    api:{
+      article:{
+        getArticlesByColumnId:''
+      }
+    }
   }
 }
 export { API_TREE_CONFIG }
