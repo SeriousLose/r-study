@@ -2,7 +2,7 @@
 import { API_TREE } from '../http/api-tree';
 import request from '../http/fetch';
 
-let accessToken = '24100939b1bd176a72081b10ead8e774_csz_web'
+let accessToken = 'be0e933b8f79ff9e5c83b4e0e8350742_csz_web'
 
 /**
  * @description: 获取文章
