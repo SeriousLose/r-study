@@ -8,7 +8,7 @@ import DiscussList from '../DiscussList/DiscussList';
 export class Article extends Component {
   constructor(props) {
     super(props);
-    this.state = { targetId: 71061, title: '', value: store.getState() };
+    this.state = { targetId: 71061, title: '', value: store.getState().fileState };
     console.log(this.state.value,'redux数据');
     // store.subscribe(this.changeId);
   }
@@ -32,7 +32,7 @@ export class Article extends Component {
     }
     store.dispatch(action);
     console.log(store.getState())
-    this.setState({value:store.getState()});
+    this.setState({value:store.getState().fileState});
     //  console.log('更新id')
   }
 

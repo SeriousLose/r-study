@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { TARGET_ID } from '../../core/redux/actions/index';
+import { fetchPostsIfNeeded, TARGET_ID } from '../../core/redux/actions/index';
 import store from '../../core/redux/store/index';
 import { getArticleList } from '../../core/services/httpService';
 
@@ -14,8 +14,9 @@ function ArticleList() {
       type:TARGET_ID,
       id:item.articleId
     }
+    console.log(store)
     store.dispatch(action);
-    console.log(store.getState())
+    console.log(store.getState().fileState,2222)
 
     let path = {
       pathname: '/detail',
@@ -28,6 +29,10 @@ function ArticleList() {
   }
 
   useEffect(() => {
+
+    store.dispatch(fetchPostsIfNeeded('reactjs')).then(() => {
+      console.log(store.getState(),1111)
+    })
     // setList
     const fetchData = async () => {
       const result = await getArticleList();
@@ -35,6 +40,10 @@ function ArticleList() {
       setList(result.value);
     };
     fetchData();
+
+
+
+
   }, []);
 
   return (

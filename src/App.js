@@ -20,7 +20,6 @@ function RouteWithSubRoutes (route) {
 
 
 function App () {
-
   return (
     <div className="App">
       <Router>
