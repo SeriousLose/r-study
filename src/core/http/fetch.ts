@@ -2,23 +2,24 @@
 const commonUrl = 'http://it.xxynet.com'
 
 // 解析json
-function parseJSON (response) {
+function parseJSON (response:any) {
   return response.json()
 }
 
 //检查请求状态
-function checkStatus (response) {
+function checkStatus (response:any) {
   if (response.status >= 200 && response.status < 500) {
     return response
   }
-  const error = new Error(response.statusText)
+  const error:any = new Error(response.statusText)
   error.response = response
   throw error
 }
 
-export default function request (options = {}) {
+
+export default function request (options:any = {}) {
   const { data, url } = options
-  options = { ...options }
+  options= { ...options }
   options.mode = 'cors'//跨域
   delete options.url
   if (data) {
@@ -34,7 +35,7 @@ export default function request (options = {}) {
     // 'authorization': accessToken
   }
   console.log(commonUrl + url)
-  return fetch(commonUrl + url, options, { credentials: 'include' })
+  return fetch(commonUrl + url, options)
     .then(checkStatus)
     .then(parseJSON)
     .catch(err => ({ err }))
