@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import Child from './Child';
+// import Child from './Child';
+// import ChildLife from './ChildLife';
 // import ChildPure from './ChildPure';
-import ChildLife from './ChildLife';
+import ChildMemo from './ChildMemo';
+
+
 
 export class Demo extends Component {
   childStyle = { color: 'pink' };
@@ -14,9 +17,10 @@ export class Demo extends Component {
         <button onClick={this.onClick}>test</button>
         {/* <Child style={{ color: 'red' }} /> */}
         {/* <ChildPure style={{ color: 'yellow' }} /> */}
-        <Child style={this.childStyle} />
+        {/* <Child style={this.childStyle} /> */}
         {/* <ChildPure style={this.childStyle} /> */}
-        <ChildLife style={this.childStyle} />
+        {/* <ChildLife style={this.childStyle} /> */}
+        <ChildMemo seconds={1}/>
       </>
     );
   }
