@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Child from './Child';
 
-class Demo extends Component {
+export class Demo extends Component {
   onClick = () => {
     this.setState({});
   };
